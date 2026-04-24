@@ -16,7 +16,7 @@ export class RestApiError extends ApiError {
     if(e instanceof AxiosError) {
       message = handleAxiosErrorMessage(e)
     }
-    super(`Rest Api Error: ${message}`)
+    super(message)
   }
 }
 export class GraphApiError extends ApiError {
@@ -26,7 +26,7 @@ export class GraphApiError extends ApiError {
     if(e instanceof AxiosError) {
       message = handleAxiosErrorMessage(e)
     }
-    super(`GraphQL Api Error: ${message}`)
+    super(message)
   }
 }
 
