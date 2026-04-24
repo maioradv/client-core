@@ -1,6 +1,6 @@
 {
   "name": "@maioradv/client-core",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Client Core for Maior JS/TS libraries",
   "repository": "https://github.com/maioradv/client-core.git",
   "author": "Maior ADV Srl",

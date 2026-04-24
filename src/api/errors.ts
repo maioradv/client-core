@@ -4,6 +4,7 @@ export class ApiError extends Error {
   constructor(...args: any) {
     super(...args);
     Object.setPrototypeOf(this, new.target.prototype);
+    this.name = new.target.name;
   }
 }
 
