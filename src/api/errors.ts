@@ -14,7 +14,7 @@ export class RestApiError extends ApiError {
     let message = e.message
     
     if(e instanceof AxiosError) {
-      message = e?.response?.data ? `${e.response.data?.message} [${e.response.data?.statusCode}]` : e.message
+      message = handleAxiosErrorMessage(e)
     }
     super(`Rest Api Error: ${message}`)
   }
@@ -24,9 +24,20 @@ export class GraphApiError extends ApiError {
     let message = e.message
     
     if(e instanceof AxiosError) {
-      message = e?.response?.data ? `${e.response.data?.message} [${e.response.data?.statusCode}]` : e.message
-       
+      message = handleAxiosErrorMessage(e)
     }
     super(`GraphQL Api Error: ${message}`)
   }
+}
+
+function handleAxiosErrorMessage(e:AxiosError) {
+  const data = e?.response?.data as Record<string, any> | undefined;
+  if (data?.message) {
+    return `${data.message}`;
+  } else if (e.message) {
+    return e.message;
+  } else if (e.code) {
+    return `Network error: ${e.code}`;
+  }
+  return 'Unknown error';
 }
