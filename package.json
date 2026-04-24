@@ -1,0 +1,32 @@
+{
+  "name": "@maioradv/client-core",
+  "version": "0.0.1",
+  "description": "Client Core for Maior JS/TS libraries",
+  "repository": "https://github.com/maioradv/client-core.git",
+  "author": "Maior ADV Srl",
+  "license": "MIT",
+  "private": false,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@maioradv/types": "^0.0.2",
+    "axios": "^1.15"
+  },
+  "devDependencies": {
+    "@types/node": "^24.6.1",
+    "typescript": "^5.8.3"
+  },
+  "keywords": [
+    "typescript",
+    "maior"
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
+}
