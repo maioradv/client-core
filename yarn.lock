@@ -2,10 +2,10 @@
 # yarn lockfile v1
 
 
-"@maioradv/types@^0.0.2":
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/@maioradv/types/-/types-0.0.2.tgz#1ed5f51136e592c20d2e80b70242341ae1c8166c"
-  integrity sha512-9Kr9zx1j7gqqIxKINz5KNbE8PNKwKq9m1lnJ95mxE0+cslVWK+Hl0GUqOfS87CWvbpl3WdCsSCPd04GHXM+UHw==
+"@maioradv/types@^0.0.7":
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/@maioradv/types/-/types-0.0.7.tgz#e0856304bc8797e1c44a15a84fc9cb4d580edaaa"
+  integrity sha512-adbVLOH6ESJaLxmvvnVsPIVK5K6WFPOW/dqPXL2DI1nYHgOM4jjLH+0wzUIO0j72FRsjGAQH2Ue24eINSoO5cQ==
 
 "@types/node@^24.6.1":
   version "24.12.2"
