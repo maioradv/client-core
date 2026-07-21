@@ -8,7 +8,6 @@ export * from './clients/sse'
 export * from './dtos/clauses'
 export * from './dtos/pagination'
 export * from './dtos/sorting'
-
-export * from './responses/remove-gql.response'
+export * from './dtos/bulk-operations'
 
 export * from './utils/queryParams'
