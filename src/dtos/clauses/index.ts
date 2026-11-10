@@ -26,7 +26,11 @@ export type DefaultClausesDto = {
   maxUpdatedAt?:DateClause,
 }
 
-export function where(args:ClausesDto): Record<string,any> {
+export type ClausesOptions = {
+  applyMetadataTransformerTo?:string[]
+}
+
+export function where(args:ClausesDto,opts:ClausesOptions = {}): Record<string,any> {
   const res = {}
   Object.keys(args).forEach(function(key) {
     if(key === 'metafields') {
@@ -35,7 +39,7 @@ export function where(args:ClausesDto): Record<string,any> {
     else if(key === 'translations') {
       res[key] = args[key] instanceof Array ? (args[key] as Array<any>).map(TranslationStringify).join() : TranslationStringify(args[key] as any)
     }
-    else if(key === 'metadata') {
+    else if(key === 'metadata' || opts?.applyMetadataTransformerTo.includes(key)) {
       res[key] = args[key] instanceof Array ? (args[key] as Array<any>).map(MetadataStringify).join() : MetadataStringify(args[key] as any)
     }
     else {
