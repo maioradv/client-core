@@ -58,7 +58,8 @@ export function TranslationStringify(object:TranslationClause) : string {
 }
 
 export function MetadataStringify(object:MetadataClause) : string {
-  return `${object.path || ''}:${object.operator || ''}:${object.value || ''}`
+  const value = object.value === null ? 'null' : object.value ?? '';
+  return `${object.path || ''}:${object.operator || ''}:${value}`
 }
 
 export type WhereClausesDto<T extends ClausesDto> = T & DefaultClausesDto
