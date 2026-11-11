@@ -39,7 +39,7 @@ export function where(args:ClausesDto,opts:ClausesOptions = {}): Record<string,a
     else if(key === 'translations') {
       res[key] = args[key] instanceof Array ? (args[key] as Array<any>).map(TranslationStringify).join() : TranslationStringify(args[key] as any)
     }
-    else if(key === 'metadata' || opts?.applyMetadataTransformerTo.includes(key)) {
+    else if(key === 'metadata' || opts?.applyMetadataTransformerTo?.includes(key)) {
       res[key] = args[key] instanceof Array ? (args[key] as Array<any>).map(MetadataStringify).join() : MetadataStringify(args[key] as any)
     }
     else {
